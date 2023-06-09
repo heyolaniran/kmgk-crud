@@ -14,7 +14,7 @@
 
     foreach($_POST as $key => $value) { 
         if($key !== "id"){ 
-            $statement .= "$key='$value'," ; 
+            $statement .= "$key='".htmlentities($value)."'," ; 
         }
     }
 

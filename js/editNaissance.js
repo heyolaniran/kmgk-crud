@@ -1,6 +1,6 @@
 $(() => { 
     $("#editAction").on("click" , () => { 
-            alert("hello")
+         
             $("#details").hide(200)
             $("#editForm").show(500)
 
@@ -23,9 +23,24 @@ $(() => {
             type: "POST",
             url: "../endpoints/editNaissance.php",
             data: data,
-            dataType: "",
+            dataType: "json",
             success: function (response) {
-                console.log(response)
+                if(response.status) {
+                      Swal.fire({
+                        icon : "success" , 
+                        text : "Modification effectuée" 
+                     })
+
+                     setTimeout(() => {
+                        window.location.href= "/naissances/"
+                     }, 2000);
+                }else { 
+                    Swal.fire({
+                        icon : "error" , 
+                        text : response.message
+                     })
+                }
+              
             }
         });
     });
