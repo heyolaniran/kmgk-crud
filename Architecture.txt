@@ -1,0 +1,1 @@
+Pour deployer cette application nous aurons besoin de serveurs der d'un hebergement avec cpanel pour mettre en ligne le code source, nous aurons besoin d'une bade de donnée SQL pour stocker nos données.  
