@@ -49,8 +49,11 @@ class Naissances {
             ->query("INSERT INTO $table VALUES(NULL , $statement)") ; 
     }
 
-    public static function update() { 
+    public static function update($statement, $id) { 
+        $table = self::$table ; 
 
+        return (new self)->db
+        ->query("UPDATE $table SET $statement WHERE id = $id") ; 
     }
 
     public static function delete($naissance_id) { 

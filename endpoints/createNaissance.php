@@ -14,10 +14,7 @@ if($_SERVER["HTTP_ORIGIN"] !== Naissances::BASE_URL)
     foreach($_POST as $key=>$value) { 
         $statement .= "'$value'," ; 
     }
-    echo var_dump($_POST) . "\n" ; 
-    echo $statement . "\n"; 
     $statement = rtrim($statement , ',') ; 
-    echo $statement ; 
     $record =  Naissances::create($statement) ; 
 
     if($record !== false) { 
